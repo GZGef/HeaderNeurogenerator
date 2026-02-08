@@ -1,0 +1,237 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# Virtual Environment
+venv/
+ENV/
+env/
+.env
+.env.local
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Data
+data/
+*.csv
+*.json
+*.zip
+
+# Results
+# # results/
+# # *.png
+# *.jpg
+# *.jpeg
+# *.pdf
+final_model/
+*.safetensors
+
+# Logs
+logs/
+*.log
+
+# Models
+*.bin
+*.model
+*.pt
+*.pth
+
+# Jupyter
+.ipynb_checkpoints/
+*.ipynb
+
+# Temporary files
+tmp/
+temp/
+*.tmp
+*.temp
+
+# Secrets
+*.env
+secrets/
+credentials/
+
+# Cache
+.cache/
+.mypy_cache/
+.pytest_cache/
+.ruff_cache/
+
+# Coverage
+.coverage
+htmlcov/
+lcov.info
+
+# Documentation
+docs/_build/
+docs/_static/
+docs/_templates/
+
+# Docker
+.dockerignore
+
+# CI/CD
+.github/
+.gitlab-ci.yml
+.travis.yml
+.circleci/
+
+# Kubernetes
+*.yaml
+*.yml
+!config.yaml
+!docker-compose.yml
+
+# Terraform
+.terraform/
+*.tfstate
+*.tfstate.*
+
+# Ansible
+*.retry
+
+# Vagrant
+.vagrant/
+
+# IDE specific
+*.code-workspace
+*.sublime-project
+*.sublime-workspace
+
+# Project specific
+config.local.yaml
+config.prod.yaml
+config.dev.yaml
+
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Virtual environment
+venv/
+env/
+.venv/
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Data files
+data/
+*.csv
+*.json
+*.zip
+
+# Logs
+logs/
+*.log
+
+# Models
+*.bin
+*.model
+*.pt
+*.pth
+
+# Jupyter
+.ipynb_checkpoints/
+*.ipynb
+
+# Temporary files
+tmp/
+temp/
+*.tmp
+*.temp
+
+# Secrets
+*.env
+secrets/
+credentials/
+
+# Cache
+.cache/
+.mypy_cache/
+.pytest_cache/
+.ruff_cache/
+
+# Coverage
+.coverage
+htmlcov/
+lcov.info
+
+# Documentation
+docs/_build/
+docs/_static/
+docs/_templates/
+
+# Docker
+.dockerignore
+
+# CI/CD
+.github/
+.gitlab-ci.yml
+.travis.yml
+.circleci/
+
+# Kubernetes
+*.yaml
+*.yml
+!config.yaml
+!docker-compose.yml
+
+# Terraform
+.terraform/
+*.tfstate
+*.tfstate.*
+
+# Ansible
+*.retry
+
+# Vagrant
+.vagrant/
+
+# IDE specific
+*.code-workspace
+*.sublime-project
+*.sublime-workspace
+
+# Project specific
+config.local.yaml
+config.prod.yaml
+config.dev.yaml

@@ -1,0 +1,190 @@
+# Конфигурация проекта "Нейрогенератор заголовков"
+
+# Настройки модели
+model:
+  # Название модели HuggingFace
+  name: "ai-forever/rugpt3small_based_on_gpt2"
+  
+  # Максимальная длина входного текста (токены)
+  max_length: 320
+  
+  # Максимальное количество новых токенов для генерации
+  max_new_tokens: 128
+  
+  # Размер словаря (автоматически определяется из модели)
+  vocab_size: 50257
+
+# Настройки обучения
+training:
+  # Количество эпох обучения
+  epochs: 1
+  
+  # Размер батча (уменьшите, если не хватает VRAM)
+  batch_size: 16
+  
+  # Скорость обучения
+  learning_rate: 0.001
+  
+  # Накопление градиента (увеличьте, если уменьшаете batch_size)
+  gradient_accumulation_steps: 2
+  
+  # Коэффициент warmup (для стабилизации обучения)
+  warmup_ratio: 0.1
+  
+  # Регуляризация (weight decay)
+  weight_decay: 0.01
+  
+  # Семя для воспроизводимости
+  seed: 42
+  
+  # Смешанная точность (только для GPU)
+  fp16: false
+  
+  # Количество примеров для обучения
+  num_train_examples: 10000
+  
+  # Сохранение модели каждые N шагов (не используется, сохранение отключено во время обучения)
+  save_steps: 500
+  
+  # Логирование каждые N шагов (уменьшено для увеличения скорости)
+  logging_steps: 500
+
+# Настройки генерации
+generation:
+  # Количество лучей в beam search
+  num_beams: 1
+  
+  # Размер n-грамма для избежания повторов
+  no_repeat_ngram_size: 2
+  
+  # Количество вариантов заголовков
+  num_return_sequences: 3
+  
+  # Температура генерации (чем выше, тем более креативная генерация)
+  temperature: 0.7
+  
+  # Top-k sampling (ограничение выбора токенов)
+  top_k: 20
+  
+  # Top-p sampling (nucleus sampling)
+  top_p: 0.9
+  
+  # Длина генерации
+  max_new_tokens: 128
+
+# Настройки устройства
+device:
+  # Использовать GPU
+  use_gpu: true
+  
+  # ID GPU (если несколько)
+  gpu_id: 0
+  
+  # Автоматический выбор устройства
+  auto_device: true
+
+# Настройки данных
+data:
+  # URL датасета
+  dataset_url: "https://storage.yandexcloud.net/google-colab-bucket/Datasets/russiannews_dataset.zip"
+  
+  # Путь к датасету
+  dataset_path: "data/dataset/news.csv"
+  
+  # Количество примеров для использования (0 = все примеры)
+  num_examples: 0
+  
+  # Колонки для использования
+  columns: ["title", "text"]
+  
+  # Разделитель в CSV
+  separator: ","
+  
+  # Кодировка
+  encoding: "utf-8"
+
+# Настройки путей
+paths:
+  # Директория с данными
+  data_dir: "data"
+  
+  # Директория с датасетом
+  dataset_dir: "data/dataset"
+  
+  # Директория с результатами
+  results_dir: "results"
+  
+  # Директория с моделями
+  models_dir: "results/models"
+  
+  # Директория с логами
+  logs_dir: "logs"
+  
+  # Директория с графиками
+  images_dir: "results/images"
+  
+  # Директория с документацией
+  docs_dir: "docs"
+  
+  # Директория с ноутбуками
+  notebooks_dir: "notebooks"
+  
+  # Директория со скриптами
+  scripts_dir: "scripts"
+
+# Настройки логирования
+logging:
+  # Уровень логирования
+  level: "INFO"
+  
+  # Формат логов
+  format: "%(asctime)s - %(name)s - %(levelname)s - %(message)s"
+  
+  # Файл лога
+  file: "logs/training.log"
+  
+  # Ротация логов
+  max_bytes: 10485760  # 10 MB
+  backup_count: 5
+
+# Настройки оценки
+evaluation:
+  # Метрики для оценки
+  metrics: ["rouge1", "rouge2", "rougeL"]
+  
+  # Порог для считания хорошим результатом
+  threshold: 0.3
+  
+  # Количество примеров для валидации
+  val_size: 1000
+  
+  # Стратификация при разбиении
+  stratify: false
+
+# Настройки HuggingFace
+huggingface:
+  # Токен (оставьте пустым, будет запрошен при необходимости)
+  token: ""
+  
+  # Репозиторий для загрузки модели
+  repo_id: ""
+  
+  # Публиковать модель
+  push_to_hub: false
+
+# Настройки веб-интерфейса
+web:
+  # Хост
+  host: "0.0.0.0"
+  
+  # Порт
+  port: 8000
+  
+  # Версия API
+  version: "1.0.0"
+  
+  # Название приложения
+  title: "Нейрогенератор заголовков"
+  
+  # Описание
+  description: "Сервис для генерации заголовков к новостным текстам с использованием GPT модели"
