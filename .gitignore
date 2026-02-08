@@ -46,12 +46,11 @@ data/
 *.zip
 
 # Results
-# # results/
-# # *.png
-# *.jpg
-# *.jpeg
-# *.pdf
-final_model/
+results/
+*.png
+*.jpg
+*.jpeg
+*.pdf
 *.safetensors
 
 # Logs
