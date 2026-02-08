@@ -437,9 +437,9 @@ trainer.save_model()
 
 ## 📞 Контакты
 
-- Автор: AI Team
-- Email: team@example.com
-- GitHub: [your-username](https://github.com/your-username)
+- Автор: Timofey Krylov
+- Email: timofey.krylov.0206@gmail.com
+- GitHub: [GZGef](https://github.com/GZGef)
 
 ---
 
